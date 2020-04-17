@@ -1,13 +1,13 @@
-@each $fontFamily in $fontFamilies {
-    @each $fontExtention in $fontExtentions{
-        @font-face {
-            font-family: #{$fontFamily};
-            src: url('../assets/Fonts/fontName/#{$fontFamily}.#{$fontExtention}');
-        }
-        .#{$fontFamily}{
-            font-family:  #{$fontFamily};
-        }
-    }
-}
+// @each $fontFamily in $fontFamilies {
+//     @each $fontExtention in $fontExtentions{
+//         @font-face {
+//             font-family: #{$fontFamily};
+//             src: url('../assets/Fonts/fontName/#{$fontFamily}.#{$fontExtention}');
+//         }
+//         .#{$fontFamily}{
+//             font-family:  #{$fontFamily};
+//         }
+//     }
+// }
 
 

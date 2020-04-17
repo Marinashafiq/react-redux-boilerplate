@@ -19,7 +19,7 @@ function Theme() {
       direction : lang === 'en' ? 'ltr' : 'rtl',
       palette: {
         primary: {
-            main : '#a53245'
+            main : '#1976d2'
         },
         secondary : {
             main : '#ac4556'
