@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import { Router } from "react-router-dom";
-import history from "./routes/History";
-import Routes from "./routes/Routes";
-import { connect } from "react-redux";
+import history from "../../routes/History";
+import Routes from "../../routes/Routes";
 import { IntlProvider } from "react-intl";
-import messages from "./assets/Local/messages";
+import messages from "../../assets/Local/messages";
 import "./App.css";
 
 function App() {

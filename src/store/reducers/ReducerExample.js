@@ -1,15 +1,13 @@
-import * as types from "../types/Home";
+import * as types from "../types/TypesExample";
 
-const INITIAL_STATE = {
-  vacancies:[],
-};
+const INITIAL_STATE = {};
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case types.ALL_VACANCIES_RECIEVE:
+    case types.GET_DATA_RECEIVE:
       return {
         ...state,
-        vacancies: action.payload,
+        ...action.payload
       };
     default:
       return state;

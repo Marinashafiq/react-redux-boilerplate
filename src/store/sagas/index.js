@@ -1,7 +1,7 @@
 import { takeLatest } from "redux-saga/effects";
-import * as TYPES_HOME from "../types/Home";
-import * as SAGAS_HOME from "./Home";
+import * as TYPES_HOME from "../types/TypesExample";
+import * as SAGAS_HOME from "./SagasExample";
 
 export function* watchAll() {
-  yield takeLatest(TYPES_AUTH.TYPES, SAGAS_AUTH.REQUEST_API);
+  yield takeLatest(TYPES_HOME.GET_DATA_REQUEST, SAGAS_HOME.homeSagaRequest);
 }

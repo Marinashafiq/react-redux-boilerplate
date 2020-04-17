@@ -6,7 +6,6 @@ const INITIAL_STATE = {
 };
 
 export default function locale(state = INITIAL_STATE, action) {
-  
   switch (action.type) {
     case types.SET_CURRENT_LANG:
       return { ...state, lang: action.lang };

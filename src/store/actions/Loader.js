@@ -1,4 +1,4 @@
-import * as types from '../types/Loader';
+import * as types from '../types';
 
 export const loader = (bool)=>{
     return bool ? {
