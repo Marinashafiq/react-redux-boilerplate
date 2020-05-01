@@ -7,16 +7,22 @@ import { IntlProvider } from "react-intl";
 import messages from "../assets/Local/messages";
 import "./App.scss";
 import { useSelector } from "react-redux";
+import { MaterialSnackbar } from "../components/Snackbar/Snackbar";
+import Loader from "../components/Loader/Loader";
 
 function App() {
+  // App contains routes and also wrapped with snackbar and intl for localization
   const lang = useSelector(state => state.locale.lang);
+  const isloading = useSelector(state => state.loading);
   return (
     <IntlProvider locale={lang} messages={messages[lang]}>
       <div
         className={lang === "ar" ? "rtl" : "ltr"}
         dir={lang === "ar" ? "rtl" : "ltr"}
       >
+        {isloading ? <Loader /> : null}
         <Router history={history}>
+          <MaterialSnackbar />
           <Navbar />
           {Routes}
         </Router>

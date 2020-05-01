@@ -8,7 +8,7 @@ export const showSnackbarAction = (message , snacknarType) => {
   };
 };
 
-export const clearSnackbar = () => {
+export const hideSnackbarAction = () => {
   return {
    type: types.HIDE_SNACKBAR 
   };

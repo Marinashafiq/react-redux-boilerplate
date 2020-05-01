@@ -3,6 +3,7 @@ import {ButtonElm} from '../../components/Controls/Button/Button';
 import History from '../../routes/History';
 class Login extends React.Component {
 
+    // this method is only to trigger route guards , remove and use your own logic
     handleLogin = () => {
         localStorage.setItem('token','token');
         History.push('/')

@@ -1,8 +1,10 @@
 import axios from "axios";
 import { requestHandler, successHandler, errorHandler } from "../interceptors";
+import {BASE_URL} from '../../utils/Constants'
 
+//add your BASE_URL to Constants file
 export const axiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL
+  baseURL: BASE_URL
 });
 
 // Handle request process

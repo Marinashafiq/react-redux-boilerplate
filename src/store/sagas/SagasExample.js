@@ -5,6 +5,7 @@ import { dispatchSnackbarError } from "../../utils/Shared";
 import { takeLatest } from "redux-saga/effects";
 import * as TYPES from "../types/TypesExample";
 
+// Replace with your sagas
 export function* sagasRequestExample() {
   try {
     const response = yield call(API.apiExampleRequest);
