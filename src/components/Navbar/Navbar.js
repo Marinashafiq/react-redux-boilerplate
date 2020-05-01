@@ -1,9 +1,9 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
 import messages from "./../../assets/Local/messages";
 import { useSelector, useDispatch } from "react-redux";
 import { setCurrentLang } from "../../store/actions/Lang";
 import { Link } from "react-router-dom";
+import { Btn } from "../Controls/Button/Button";
 
 export default function Navbar() {
   const lang = useSelector(state => state.locale.lang);
@@ -21,9 +21,7 @@ export default function Navbar() {
           <Link to="/" className="text-white mx-3">
             Private Route
           </Link>
-          <Button variant="contained" onClick={() => switchLanguage(lang)}>
-            {message.langBtn}
-          </Button>
+          <Btn handleClick={() => switchLanguage(lang)} text={message.langBtn} />
         </div>
       </nav>
     </>

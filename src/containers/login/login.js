@@ -1,5 +1,5 @@
 import React from 'react';
-import {ButtonElm} from '../../components/Controls/Button/Button';
+import {Btn} from '../../components/Controls/Button/Button';
 import History from '../../routes/History';
 class Login extends React.Component {
 
@@ -13,7 +13,7 @@ class Login extends React.Component {
         return(
             <div className="container my-5">
                 <h1>Login Page</h1>
-                <ButtonElm text='Login' handleClick={this.handleLogin}/>
+                <Btn text='Login' handleClick={this.handleLogin}/>
             </div>
         )
     }
