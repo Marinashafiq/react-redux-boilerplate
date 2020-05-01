@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
 import messages from "./../../assets/Local/messages";
 import { useSelector, useDispatch } from "react-redux";
 import { setCurrentLang } from "../../store/actions/Lang";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const lang = useSelector(state => state.locale.lang);
@@ -16,22 +17,14 @@ export default function Navbar() {
     <>
       <nav className="navbar navbar-dark bg-dark">
         <a className="navbar-brand">{message.hello}</a>
-        <div >
-          <div className="navbar-nav d-flex">
-            <a className="nav-item nav-link active" href="#">
-              Home <span class="sr-only">(current)</span>
-            </a>
-            <a className="nav-item nav-link" href="#">
-              Features
-            </a>
-            <a className="nav-item nav-link" href="#">
-              Pricing
-            </a>
-          </div>
+        <div className="d-flex align-items-center">
+          <Link to="/" className="text-white mx-3">
+            Private Route
+          </Link>
+          <Button variant="contained" onClick={() => switchLanguage(lang)}>
+            {message.langBtn}
+          </Button>
         </div>
-        <Button variant="contained" onClick={() => switchLanguage(lang)}>
-          {message.langBtn}
-        </Button>
       </nav>
     </>
   );

@@ -2,7 +2,7 @@
 import * as types from '../types';
 
 const INITIAL_STATE = {
-  lang: localStorage.getItem('lang') || 'ar'
+  lang: localStorage.getItem('lang') || 'en'
 };
 
 export default function locale(state = INITIAL_STATE, action) {

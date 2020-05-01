@@ -1,7 +1,9 @@
-import { takeLatest } from "redux-saga/effects";
-import * as TYPES_HOME from "../types/TypesExample";
-import * as SAGAS_HOME from "./SagasExample";
+import { saga1 } from './SagasExample';
+import { fork, all } from "redux-saga/effects";
 
-export function* watchAll() {
-  yield takeLatest(TYPES_HOME.GET_DATA_REQUEST, SAGAS_HOME.homeSagaRequest);
+export function* watchSagas() {
+  //Combine sagas with 
+  yield all([saga1()]);
+  // OR
+  // yield all([fork(saga1)]);
 }

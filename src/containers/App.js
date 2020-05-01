@@ -9,15 +9,17 @@ import "./App.scss";
 import { useSelector } from "react-redux";
 
 function App() {
-  const  lang  = useSelector(state => state.locale.lang);
+  const lang = useSelector(state => state.locale.lang);
   return (
     <IntlProvider locale={lang} messages={messages[lang]}>
       <div
         className={lang === "ar" ? "rtl" : "ltr"}
         dir={lang === "ar" ? "rtl" : "ltr"}
       >
-        <Navbar />
-        <Router history={history}>{Routes}</Router>
+        <Router history={history}>
+          <Navbar />
+          {Routes}
+        </Router>
       </div>
     </IntlProvider>
   );
