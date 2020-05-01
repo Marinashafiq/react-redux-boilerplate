@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import store from "./store";
-import Theme from "./Theme";
+import ThemeApp from "./Theme";
 
 ReactDOM.render(
   <Provider store={store}>
-    <Theme />
+    <ThemeApp />
   </Provider>,
   document.querySelector('#root')
 );

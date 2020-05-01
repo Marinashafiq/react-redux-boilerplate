@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-} from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
 import messages from "./../../assets/Local/messages";
 import { useSelector, useDispatch } from "react-redux";
 import { setCurrentLang } from "../../store/actions/Lang";
@@ -19,16 +14,25 @@ export default function Navbar() {
 
   return (
     <>
-      <AppBar position="static">
-        <Toolbar className="d-flex justify-content-between">
-          <Typography variant="h6">
-            {message.hello}
-          </Typography>
-          <Button color="inherit" onClick={() => switchLanguage(lang)}>
-            {lang === "ar" ? "English" : "عربى"}
-          </Button>
-        </Toolbar>
-      </AppBar>
+      <nav className="navbar navbar-dark bg-dark">
+        <a className="navbar-brand">{message.hello}</a>
+        <div >
+          <div className="navbar-nav d-flex">
+            <a className="nav-item nav-link active" href="#">
+              Home <span class="sr-only">(current)</span>
+            </a>
+            <a className="nav-item nav-link" href="#">
+              Features
+            </a>
+            <a className="nav-item nav-link" href="#">
+              Pricing
+            </a>
+          </div>
+        </div>
+        <Button variant="contained" onClick={() => switchLanguage(lang)}>
+          {message.langBtn}
+        </Button>
+      </nav>
     </>
   );
 }

@@ -1,9 +1,19 @@
 import store from "../store";
-// import { showSuccessSnackbar } from "../store/actions/Snackbar";
+import { showSnackbarAction } from "../store/actions/snackbar";
+import messages from '../assets/Local/messages';
 
-export function dispatchError(data) {
+// To show error message that returned from backend
+export function dispatchSnackbarError(data) {
   if (data) {
     const errorMsg = data.error.message;
-    // store.dispatch(showSuccessSnackbar(errorMsg, "error"));
+    store.dispatch(showSnackbarAction(errorMsg, "error"));
   }
 }
+// To show success message after any success request if needed
+export function dispatchSnackbarSuccess(message) {
+  const lang = store.getState().locale.lang;
+  store.dispatch(
+    showSnackbarAction(messages[lang].snackbar[message], "success")
+  );
+}
+

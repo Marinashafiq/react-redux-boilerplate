@@ -12,8 +12,6 @@ export const requestHandler = request => {
   if (isHandlerEnabled(request)) {
     const token = localStorage.getItem("token");
     store.dispatch(loader(true));
-    request.headers["Accept-Language"] =
-      localStorage.getItem("lang") === "ar" ? "ar-SA" : "en-US";
     request.headers["Content-Type"] = "application/json";
     token && (request.headers["Authorization"] = `Bearer ${token}`);
   }
