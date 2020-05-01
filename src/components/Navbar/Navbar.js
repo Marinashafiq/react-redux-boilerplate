@@ -18,6 +18,7 @@ export default function Navbar() {
       <nav className="navbar navbar-dark bg-dark">
         <a className="navbar-brand">{message.hello}</a>
         <div className="d-flex align-items-center">
+          {/* This private route won't be accessible if no token in lcoal storage */}
           <Link to="/" className="text-white mx-3">
             Private Route
           </Link>
