@@ -1,5 +1,5 @@
 
-import * as types from '../types';
+import * as types from './LangTypes';
 
 const INITIAL_STATE = {
   lang: localStorage.getItem('lang') || 'en'

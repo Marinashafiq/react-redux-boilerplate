@@ -1,4 +1,4 @@
-import * as types from '../types';
+import * as types from './LangTypes';
 
 export const setCurrentLang = lang  => {
   localStorage.setItem('lang', lang);

@@ -1,5 +1,5 @@
 import store from "../store";
-import { showSnackbarAction } from "../store/actions/snackbar";
+import { showSnackbarAction } from "../store/Snackbar/SnackbarAction";
 import messages from '../assets/Local/messages';
 
 // To show error message that returned from backend

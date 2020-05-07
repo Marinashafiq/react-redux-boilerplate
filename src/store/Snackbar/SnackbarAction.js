@@ -1,4 +1,4 @@
-import * as types from '../types';
+import * as types from './SnackbarTypes';
 
 export const showSnackbarAction = (message , snacknarType) => {
   return {

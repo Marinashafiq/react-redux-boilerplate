@@ -1,5 +1,5 @@
 import store from "../../store";
-import { loader } from "../../store/actions/Loader";
+import { loader } from "../../store/Loader/LoaderAction";
 import Auth from "../../utils/Auth";
 
 export const isHandlerEnabled = (config = {}) => {
