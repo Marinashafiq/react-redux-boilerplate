@@ -11,7 +11,7 @@ export function dispatchSnackbarError(data) {
 }
 // To show success message after any success request if needed
 export function dispatchSnackbarSuccess(message) {
-  const lang = store.getState().locale.lang;
+  const lang = store.getState().language.lang;
   store.dispatch(
     showSnackbarAction(messages[lang].snackbar[message], "success")
   );

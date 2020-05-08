@@ -12,7 +12,7 @@ import Loader from "../components/Loader/Loader";
 
 function App() {
   // App contains routes and also wrapped with snackbar and intl for localization
-  const lang = useSelector(state => state.locale.lang);
+  const lang = useSelector(state => state.lang);
   const isloading = useSelector(state => state.loading);
   return (
     <IntlProvider locale={lang} messages={messages[lang]}>

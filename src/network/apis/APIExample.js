@@ -1,11 +1,11 @@
-import {axiosInstance} from './index';
-let handlerEnabled = true;
+import { axiosInstance } from "./index";
+const handlerEnabled = false;
 
 // Replace endpoint and change api name
-const apiExampleRequest = async () =>{
-    return await axiosInstance.get(`ENDPOINT` ,{handlerEnabled})
-}
+const apiExampleRequest = async () => {
+  return await axiosInstance.get(`ENDPOINT`, { handlerEnabled });
+};
 
 export default {
-    apiExampleRequest
+  apiExampleRequest
 };

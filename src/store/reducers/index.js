@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
-import locale from "./Lang";
+import lang from "./Lang";
 import loader from "./Loader";
 import snackbar from "./Snackbar";
 import ReducerExample from "./ReducerExample";
 
 export default combineReducers({
-  locale,
+  lang,
   loader,
   snackbar,
   ReducerExample

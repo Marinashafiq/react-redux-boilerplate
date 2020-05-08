@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Btn } from "../Controls/Button/Button";
 
 export default function Navbar() {
-  const lang = useSelector(state => state.locale.lang);
+  const lang = useSelector(state => state.lang);
   const dispatch = useDispatch();
   const message = messages[lang];
   const switchLanguage = lang => {
@@ -22,7 +22,10 @@ export default function Navbar() {
           <Link to="/" className="text-white mx-3">
             Private Route
           </Link>
-          <Btn handleClick={() => switchLanguage(lang)} text={message.langBtn} />
+          <Btn
+            handleClick={() => switchLanguage(lang)}
+            text={message.langBtn}
+          />
         </div>
       </nav>
     </>

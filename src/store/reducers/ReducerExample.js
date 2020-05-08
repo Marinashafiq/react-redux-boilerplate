@@ -1,4 +1,4 @@
-import * as types from "../types/TypesExample";
+import * as types from "../types/Feature1Types";
 
 const INITIAL_STATE = {};
 
