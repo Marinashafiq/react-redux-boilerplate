@@ -16,7 +16,7 @@ class Home extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        lang : state.locale.lang
+        lang : state.lang
     }
 }
 

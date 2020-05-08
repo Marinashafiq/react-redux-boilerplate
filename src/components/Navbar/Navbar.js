@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Btn } from "../Controls/Button/Button";
 
 export default function Navbar() {
-  const lang = useSelector(state => state.locale.lang);
+  const lang = useSelector(state => state.lang);
   const dispatch = useDispatch();
   const message = messages[lang];
   const switchLanguage = lang => {

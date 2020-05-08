@@ -1,5 +1,5 @@
 import {axiosInstance} from './index';
-let handlerEnabled = true;
+const handlerEnabled = false;
 
 // Replace endpoint and change api name
 const apiExampleRequest = async () =>{

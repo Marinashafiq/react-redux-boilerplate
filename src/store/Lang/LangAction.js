@@ -1,10 +1,10 @@
 import * as types from './LangTypes';
 
-export const setCurrentLang = lang  => {
-  localStorage.setItem('lang', lang);
-  return { type: types.SET_CURRENT_LANG, lang: lang };
+export const setCurrentLang = payload  => {
+  localStorage.setItem('lang', payload);
+  return { type: types.SET_LANG, payload };
 }
 
 export const getCurrentLang = () => {
-  return { type: types.GET_CURRENT_LANG };
+  return { type: types.GET_LANG };
 };
