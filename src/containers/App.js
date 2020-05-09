@@ -5,30 +5,36 @@ import history from "../routes/History";
 import Routes from "../routes/Routes";
 import { IntlProvider } from "react-intl";
 import messages from "../assets/Local/messages";
-import { useSelector } from "react-redux";
 import { MaterialSnackbar } from "../components/Snackbar/Snackbar";
 import Loader from "../components/Loader/Loader";
 import "./App.scss";
+import { connect } from "react-redux";
 
-function App() {
+class App extends React.Component {
   // App contains routes and also wrapped with snackbar and intl for localization
-  const lang = useSelector(state => state.lang);
-  const isloading = useSelector(state => state.loading);
-  return (
-    <IntlProvider locale={lang} messages={messages[lang]}>
-      <div
-        className={lang === "ar" ? "rtl" : "ltr"}
-        dir={lang === "ar" ? "rtl" : "ltr"}
-      >
-        {isloading ? <Loader /> : null}
-        <Router history={history}>
-          <MaterialSnackbar />
-          <Navbar />
-          {Routes}
-        </Router>
-      </div>
-    </IntlProvider>
-  );
+  render() {
+    const { lang , loading } = this.props;
+    return (
+      <IntlProvider locale={lang} messages={messages[lang]}>
+        <div
+          className={lang === "ar" ? "rtl" : "ltr"}
+          dir={lang === "ar" ? "rtl" : "ltr"}
+        >
+          {loading ? <Loader /> : null}
+          <Router history={history}>
+            <MaterialSnackbar />
+            <Navbar />
+            {Routes}
+          </Router>
+        </div>
+      </IntlProvider>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = ({ lang, loading }) => ({
+  lang,
+  loading
+});
+
+export default connect(mapStateToProps, null)(App);
