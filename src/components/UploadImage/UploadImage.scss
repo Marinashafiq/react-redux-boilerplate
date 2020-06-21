@@ -2,25 +2,10 @@
   position: relative;
 
   &__img {
-    width: 100px;
-    height: 100px;
+    width: 80%;
     border: 2px dashed lightgray;
     background-position: center;
     background-repeat: no-repeat;
-
-    &--lg {
-      width: 150px;
-      height: 150px;
-      margin: 0 auto;
-      border-radius: 50%;
-    }
-
-    &--triangle {
-      width: 25%;
-      height: 250px;
-      margin: 0 auto;
-      border-radius: 2px;
-    }
   }
 
   &__desc {
@@ -33,7 +18,8 @@
   }
 
   &__btn {
-    background: lightgray;
+    background: #763784;
+    color: white;
     cursor: pointer;
 
     input {
@@ -42,25 +28,6 @@
       left: 0;
       width: 100%;
       cursor: pointer;
-    }
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .uploade-image {
-    &__img {
-      &--triangle {
-        width: 50%;
-      }
-    }
-  }
-}
-@media only screen and (max-width: 425px) {
-  .uploade-image {
-    &__img {
-      &--triangle {
-        width: 100%;
-      }
     }
   }
 }

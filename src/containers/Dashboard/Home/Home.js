@@ -1,10 +1,11 @@
 import React from "react";
-import messages from "./../../assets/Local/messages";
+import messages from "../../../assets/Local/messages";
 import { connect } from "react-redux";
-import { SelectComponent } from "../../components/Controls/Select/Select";
-import { InputField } from "../../components/Controls/InputField/InputField";
-import { CheckboxComponent } from "../../components/Controls/Checkbox/Checkbox";
-import { DateField } from "../../components/Controls/DateField/DateField";
+import { SelectComponent } from "../../../components/Controls/Select/Select";
+import { InputField } from "../../../components/Controls/InputField/InputField";
+import { CheckboxComponent } from "../../../components/Controls/Checkbox/Checkbox";
+import { DateField } from "../../../components/Controls/DateField/DateField";
+import UploadImageComponent from "../../../components/UploadImage/UploadImage";
 
 class Home extends React.Component {
   constructor(props) {
@@ -29,6 +30,10 @@ class Home extends React.Component {
       [name]: date,
     });
   };
+
+  handleUploadImage = (image) => {
+    console.log(image)
+  }
 
   render() {
     const {
@@ -108,6 +113,9 @@ class Home extends React.Component {
               handleChange={this.handleDateChange}
               isRequired={true}
             />
+          </div>
+          <div className="col-md-8">
+            <UploadImageComponent onUploadImage={this.handleUploadImage}/>
           </div>
         </div>
       </>
