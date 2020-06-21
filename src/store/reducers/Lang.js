@@ -1,6 +1,6 @@
 import * as types from "../types";
 
-const INITIAL_STATE = localStorage.getItem("lang") || "en";
+const INITIAL_STATE = "ar";
 
 export default function language(state = INITIAL_STATE, action) {
   switch (action.type) {

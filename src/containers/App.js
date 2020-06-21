@@ -9,11 +9,12 @@ import { MaterialSnackbar } from "../components/Snackbar/Snackbar";
 import Loader from "../components/Loader/Loader";
 import "./App.scss";
 import { connect } from "react-redux";
+import MainLayout from "./Dashboard/MainLayout/MainLayout";
 
 class App extends React.Component {
   // App contains routes and also wrapped with snackbar and intl for localization
   render() {
-    const { lang , loading } = this.props;
+    const { lang, loading } = this.props;
     return (
       <IntlProvider locale={lang} messages={messages[lang]}>
         <div
@@ -21,11 +22,7 @@ class App extends React.Component {
           dir={lang === "ar" ? "rtl" : "ltr"}
         >
           {loading ? <Loader /> : null}
-          <Router history={history}>
-            <MaterialSnackbar />
-            <Navbar />
-            {Routes}
-          </Router>
+          <Router history={history}>{Routes}</Router>
         </div>
       </IntlProvider>
     );
@@ -34,7 +31,7 @@ class App extends React.Component {
 
 const mapStateToProps = ({ lang, loading }) => ({
   lang,
-  loading
+  loading,
 });
 
 export default connect(mapStateToProps, null)(App);

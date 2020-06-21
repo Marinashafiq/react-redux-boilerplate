@@ -12,7 +12,7 @@ const Routes = (
         {/* For private routes */}
         <PrivateRoute component={LazyComponent.Home} path="/" exact />
         {/* Public routes that doesn't need any auth */}
-        <LazyComponent.Login path="/login" exact />
+        <PrivateRoute component={LazyComponent.Login} path="/login" exact />
         <LazyComponent.NotFound path="**" title="This page doesn't exist..." exact />
       </Switch>
     </Router>

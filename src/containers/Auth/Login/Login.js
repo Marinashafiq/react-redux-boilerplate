@@ -1,6 +1,6 @@
 import React from 'react';
-import {Btn} from '../../components/Controls/Button/Button';
-import History from '../../routes/History';
+import {ButtonComponent} from '../../../components/Controls/Button/Button';
+import History from '../../../routes/History';
 class Login extends React.Component {
 
     // this method is only to trigger route guards , remove and use your own logic
@@ -13,7 +13,7 @@ class Login extends React.Component {
         return(
             <div className="container my-5">
                 <h1>Login Page</h1>
-                <Btn text='Login' handleClick={this.handleLogin}/>
+                <ButtonComponent content='Login' variant="contained" handleClick={this.handleLogin}/>
             </div>
         )
     }

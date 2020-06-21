@@ -1,23 +1,19 @@
-import React from 'react';
+import React from "react";
 import messages from "./../../assets/Local/messages";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
 class Home extends React.Component {
-    render(){
-        const { lang } = this.props;
-        const message = messages[lang]
-        return(
-            <div className="container my-5">
-                <p>{message.home.content}</p>
-            </div>
-        )
-    }
+  render() {
+    const { lang } = this.props;
+    const message = messages[lang];
+    return <p>{message.home.content}</p>;
+  }
 }
 
 const mapStateToProps = (state) => {
-    return {
-        lang : state.lang
-    }
-}
+  return {
+    lang: state.lang,
+  };
+};
 
-export default connect(mapStateToProps,null)(Home);
+export default connect(mapStateToProps, null)(Home);
