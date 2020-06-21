@@ -25,6 +25,7 @@ function ThemeApp() {
       }
     }
   });
+  document.body.dir = direction;
   return (
     <StylesProvider jss={jss}>
       <ThemeProvider theme={theme}>
