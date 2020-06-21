@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 
 export const DateField = ({
   value,
-  message,
+  label,
   handleChange,
   name,
   error,
@@ -18,9 +18,10 @@ export const DateField = ({
   disableFuture,
   disablePast,
   minDate,
-  invalidDateMessage
+  invalidDateMessage,
+  isRequired
 }) => {
-  const lang = useSelector(state => state.locale.lang);
+  const lang = useSelector(state => state.lang);
   return (
     <MuiPickersUtilsProvider
       utils={DateFnsUtils}
@@ -37,7 +38,7 @@ export const DateField = ({
         inputVariant="outlined"
         variant="inline"
         format="dd/MM/yyyy"
-        label={message}
+        label={isRequired ? label + "*" : label}
         InputAdornmentProps={{ position: "end" }}
         onChange={date => handleChange(date, name )}
         invalidDateMessage={invalidDateMessage}

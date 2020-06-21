@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { SelectComponent } from "../../components/Controls/Select/Select";
 import { InputField } from "../../components/Controls/InputField/InputField";
 import { CheckboxComponent } from "../../components/Controls/Checkbox/Checkbox";
+import { DateField } from "../../components/Controls/DateField/DateField";
 
 class Home extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class Home extends React.Component {
       course_name: "",
       description: "",
       isSponsered: false,
+      date: null,
     };
   }
   handleChange = (e) => {
@@ -21,8 +23,21 @@ class Home extends React.Component {
     });
   };
 
+  handleDateChange = (date, name) => {
+    this.setState({
+      ...this.state,
+      [name]: date,
+    });
+  };
+
   render() {
-    const { category, course_name, description, isSponsered } = this.state;
+    const {
+      category,
+      course_name,
+      description,
+      isSponsered,
+      date,
+    } = this.state;
     const { lang } = this.props;
     const message = messages[lang];
     const list = [
@@ -83,6 +98,15 @@ class Home extends React.Component {
               handleChange={this.handleChange}
               name="isSponsered"
               content="Sponsered"
+            />
+          </div>
+          <div className="col-md-6">
+            <DateField
+              value={date}
+              label={"التاريخ"}
+              name="date"
+              handleChange={this.handleDateChange}
+              isRequired={true}
             />
           </div>
         </div>
