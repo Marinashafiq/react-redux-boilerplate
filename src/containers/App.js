@@ -1,18 +1,15 @@
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
 import { Router } from "react-router-dom";
+import { connect } from "react-redux";
+import { IntlProvider } from "react-intl";
 import history from "../routes/History";
 import Routes from "../routes/Routes";
-import { IntlProvider } from "react-intl";
 import messages from "../assets/Local/messages";
-import { MaterialSnackbar } from "../components/Snackbar/Snackbar";
 import Loader from "../components/Loader/Loader";
+import { MaterialSnackbar } from "../components/Snackbar/Snackbar";
 import "./App.scss";
-import { connect } from "react-redux";
-import MainLayout from "./Dashboard/MainLayout/MainLayout";
 
 class App extends React.Component {
-  // App contains routes and also wrapped with snackbar and intl for localization
   render() {
     const { lang, loading } = this.props;
     return (
@@ -22,6 +19,7 @@ class App extends React.Component {
           dir={lang === "ar" ? "rtl" : "ltr"}
         >
           {loading ? <Loader /> : null}
+          <MaterialSnackbar />
           <Router history={history}>{Routes}</Router>
         </div>
       </IntlProvider>

@@ -1,33 +1,32 @@
 import React from "react";
-import messages from "./../../assets/Local/messages";
+import { injectIntl } from "react-intl";
 import { useSelector, useDispatch } from "react-redux";
 import { setCurrentLang } from "../../store/actions/Lang";
-import { Link } from "react-router-dom";
 import { ButtonComponent } from "../Controls/Button/Button";
+import ProfileMenu from "../ProfileMenu/ProfileMenu";
 
-export default function Navbar() {
+function Navbar({intl : {messages}}) {
   const lang = useSelector(state => state.lang);
   const dispatch = useDispatch();
-  const message = messages[lang];
   const switchLanguage = lang => {
     dispatch(setCurrentLang(lang === "ar" ? "en" : "ar"));
   };
-
   return (
     <>
-      <nav className="navbar navbar-dark bg-dark">
-        <a className="navbar-brand">{message.hello}</a>
+      <div className="w-100 d-flex justify-content-between align-items-center">
+        <p className="mb-0">{messages.pages.dashboard}</p>
         <div className="d-flex align-items-center">
-          {/* This private route won't be accessible if no token in lcoal storage */}
-          <Link to="/" className="text-white mx-3">
-            Private Route
-          </Link>
+          <ProfileMenu />
           <ButtonComponent
             handleClick={() => switchLanguage(lang)}
-            content={message.langBtn}
+            content={messages.lang}
+            variant="contained"
           />
         </div>
-      </nav>
+      </div>
     </>
   );
 }
+
+export default injectIntl(Navbar);
+

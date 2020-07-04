@@ -1,4 +1,4 @@
-import * as types from "../types/Feature1Types";
+import * as types from "../types/auth";
 
 //Replace action name and update action types
 export const feature1ActionRequest = () => ({

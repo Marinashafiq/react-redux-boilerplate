@@ -1,1 +1,7 @@
-// Add you general and shared styles here
+a {
+  color: inherit;
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}

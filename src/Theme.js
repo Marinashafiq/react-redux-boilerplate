@@ -18,12 +18,17 @@ function ThemeApp() {
     direction: direction,
     palette: {
       primary: {
-        main: "#763784"
+        main: "#2C5FBF"
       },
       secondary: {
-        main: "#763784"
+        main: "#97BAFE"
       }
-    }
+    },
+    typography: {
+      button: {
+        textTransform: "initial",
+      },
+    },
   });
   document.body.dir = direction;
   return (

@@ -18,8 +18,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
-import { Link } from "react-router-dom";
-import { ButtonComponent } from "../../../components/Controls/Button/Button";
+import Navbar from "../../../components/Navbar/Navbar";
 
 const drawerWidth = 240;
 
@@ -89,7 +88,6 @@ export default function MainLayout(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -119,14 +117,7 @@ export default function MainLayout(props) {
           >
             <MenuIcon />
           </IconButton>
-          <div className="w-100 d-flex justify-content-between">
-            <a className="navbar-brand">الصفحة الرئيسية</a>
-            <div className="d-flex align-items-center">
-              <Link to="/" className="text-white mx-3">
-                Profile
-              </Link>
-            </div>
-          </div>
+            <Navbar />
         </Toolbar>
       </AppBar>
       <Drawer

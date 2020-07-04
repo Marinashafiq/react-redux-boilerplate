@@ -1,6 +1,6 @@
 import * as types from "../types";
 
-const INITIAL_STATE = "ar";
+const INITIAL_STATE = "en";
 
 export default function language(state = INITIAL_STATE, action) {
   switch (action.type) {

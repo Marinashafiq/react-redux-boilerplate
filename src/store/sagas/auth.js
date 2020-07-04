@@ -1,9 +1,8 @@
-import { call, put } from "redux-saga/effects";
-import API from "../../network/apis/APIExample";
-import * as ACTIONS from "../actions/Feature1";
+import { call, put , takeLatest } from "redux-saga/effects";
+import API from "../../network/apis/auth";
+import * as ACTIONS from "../actions/auth";
 import { dispatchSnackbarError } from "../../utils/Shared";
-import { takeLatest } from "redux-saga/effects";
-import * as TYPES from "../types/Feature1Types";
+import * as TYPES from "../types/auth";
 
 // Replace with your sagas
 export function* feature1Saga() {
@@ -17,6 +16,6 @@ export function* feature1Saga() {
 
 
 
-export function* saga1() {
+export function* authSagas() {
   yield takeLatest(TYPES.GET_DATA_REQUEST, feature1Saga);
 }
