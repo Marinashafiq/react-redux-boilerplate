@@ -11,9 +11,11 @@ function ThemeApp() {
   const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
   const lang = useSelector(state => state.lang);
   const [direction, setDirection] = useState(lang === "en" ? "ltr" : "rtl");
+
   useEffect(() => {
     setDirection(lang === "en" ? "ltr" : "rtl");
   }, [lang]);
+
   const theme = createMuiTheme({
     direction: direction,
     palette: {

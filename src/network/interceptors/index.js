@@ -1,5 +1,5 @@
 import store from "../../store";
-import { loader } from "../../store/actions/Loader";
+import { loader } from "../../store/Loader/LoaderAction";
 import Auth from "../../utils/Auth";
 
 export const isHandlerEnabled = (config = {}) => {
@@ -18,7 +18,7 @@ export const requestHandler = request => {
 
 export const successHandler = response => {
   if (isHandlerEnabled(response)) {
-    // Handle responses
+    // Hanlde Response
     store.dispatch(loader(false));
   }
   return response;

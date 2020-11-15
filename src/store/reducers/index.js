@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
-import lang from "./Lang";
-import loader from "./Loader";
-import snackbar from "./Snackbar";
-import ReducerExample from "./ReducerExample";
+import lang from "../Lang/LangReducer";
+import loader from "../Loader/LoaderReducer";
+import snackbar from "../Snackbar/SnackbarReducer";
+import Feature1 from "../Feature1/FeatureReducer";
 
 export default combineReducers({
   lang,
   loader,
   snackbar,
-  ReducerExample
+  Feature1
 });
