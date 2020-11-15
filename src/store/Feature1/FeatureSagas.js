@@ -1,5 +1,5 @@
 import { call, put } from "redux-saga/effects";
-import API from "../../network/apis/APIExample";
+import API from "./FeatureApis";
 import * as ACTIONS from "./FeatureAction";
 import { dispatchSnackbarError } from "../../utils/Shared";
 import { takeLatest } from "redux-saga/effects";

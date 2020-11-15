@@ -1,4 +1,4 @@
-import {axiosInstance} from './index';
+import {axiosInstance} from '../../network/apis';
 const handlerEnabled = false;
 
 // Replace endpoint and change api name
