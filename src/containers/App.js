@@ -9,11 +9,13 @@ import { MaterialSnackbar } from "../components/Snackbar/Snackbar";
 import Loader from "../components/Loader/Loader";
 import "./App.scss";
 import { connect } from "react-redux";
+import { setCurrentLang } from "../store/Lang/LangAction";
 
 class App extends React.Component {
   // App contains routes and also wrapped with snackbar and intl for localization
+
   render() {
-    const { lang , loading } = this.props;
+    const { lang, loading } = this.props;
     return (
       <IntlProvider locale={lang} messages={messages[lang]}>
         <div
@@ -24,7 +26,7 @@ class App extends React.Component {
           <Router history={history}>
             <MaterialSnackbar />
             <Navbar />
-            {Routes}
+            {<Routes lang={lang} />}
           </Router>
         </div>
       </IntlProvider>
@@ -34,7 +36,7 @@ class App extends React.Component {
 
 const mapStateToProps = ({ lang, loading }) => ({
   lang,
-  loading
+  loading,
 });
 
-export default connect(mapStateToProps, null)(App);
+export default connect(mapStateToProps, { setCurrentLang })(App);
